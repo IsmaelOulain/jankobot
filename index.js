@@ -60,8 +60,9 @@ bot.on('message', msg =>{
      allChannels.forEach(elemento => {
       msg.guild.member(id).voice.setChannel(msg.guild.channels.cache.find(channel => channel.name === elemento));
      })
+        msg.guild.member(id).voice.setChannel(msg.member.voice.channel);
     }
-      msg.guild.member(id).voice.setChannel(msg.member.voice.channel);
+     
   
   
     
