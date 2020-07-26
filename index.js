@@ -4,11 +4,10 @@ const { sleep } = require('sleep');
 
 const bot = new Discord.Client();
 
-const token = 'NzM2MjU2MDIxNzk3OTI5MDMx.XxsJ2g.F0gIb59VTSZpO8zt8U-88of8_3Q';
 
 var prefix = '!'; 
 console.log('bot è on');
-bot.login(token);
+bot.login(process.env.TOKEN_TOUR);
 
 bot.on('message', msg =>{
    var args= msg.content.substring(prefix.length).split(" ");
