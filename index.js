@@ -61,6 +61,7 @@ bot.on('message', msg =>{
       msg.guild.member(id).voice.setChannel(msg.guild.channels.cache.find(channel => channel.name === elemento));
      })
     }
+      msg.guild.member(id).voice.setChannel(msg.member.voice.channel);
   
   
     
