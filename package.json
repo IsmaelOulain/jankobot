@@ -1,0 +1,11 @@
+{
+  "name": "tripper",
+  "version": "1.0.0",
+  "description": "vi trippo",
+  "main": "index.js",
+  "author": "TeaCup",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "sleep": "^6.3.0"
+  }
+}
