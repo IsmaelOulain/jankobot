@@ -2,6 +2,9 @@
   "name": "tripper",
   "version": "1.0.0",
   "description": "vi trippo",
+   "engines": { 
+    "node": "12.18.2" 
+ },
   "main": "index.js",
   "author": "TeaCup",
   "dependencies": {
