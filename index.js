@@ -8,13 +8,54 @@ const bot = new Discord.Client();
 var prefix = '!'; 
 console.log('bot è on');
 bot.login(process.env.TOKEN_TOUR);
-
+const cooldown= new Set();
+ 
 bot.on('message', msg =>{
    var args= msg.content.substring(prefix.length).split(" ");
 
+ 
    if(args[0]==='tour'){
     var member = args[1];
+    if(cooldown.has(msg.author.id)){
+      msg.reply("cojone basta spammare ora aspetti 15 min");
+    
+    }else{
+      cooldown.add(msg.author.id);
+      setTimeout(()=>{
+        if(!args[1]){
+          msg.reply("chi?");
+        }else{
+          var textArray = [
+            'bravo cojone mò fatte ngiretto',
+            'facce sapè poi come è andato il tour',
+            'comunque mò devi pagà er giro eh a stronzo',
+            'te sei guadagnato un bel giretto, per informazioni scrivimi su: cha_.ndu',
+            
+        ];
+        var randomNumber = Math.floor(Math.random()*textArray.length);
+        msg.channel.send(member+" "+textArray[randomNumber]);
+        let id= msg.mentions.users.first();
+          
+          var allChannels =[];
+      
+      
+      msg.guild.channels.cache.forEach(channel => { 
+        if (channel.type === "voice") {
+           allChannels.push(channel.name); 
+           //console.log(channel.name);
+      
+          }
+      });
+      
+         allChannels.forEach(elemento => {
+          msg.guild.member(id).voice.setChannel(msg.guild.channels.cache.find(channel => channel.name === elemento));
+         })
+        }
 
+      },900000)
+     
+
+    }
     
     
     //(msg.mentions.users.first())
@@ -32,35 +73,7 @@ bot.on('message', msg =>{
     msg.channel.send('hello');
     msg.member.voice.setChannel();
     // user(message.mentions.users.first()).setVoiceChannel(VoiceChannel.name('Generale'))*/
-    if(!args[1]){
-      msg.reply("chi?");
-    }else{
-      var textArray = [
-        'bravo cojone mò fatte ngiretto',
-        'facce sapè poi come è andato il tour',
-        'comunque mò devi pagà er giro eh a stronzo',
-        'te sei guadagnato un bel giretto, per informazioni scrivimi su: cha_.ndu',
-        
-    ];
-    var randomNumber = Math.floor(Math.random()*textArray.length);
-    msg.channel.send(member+" "+textArray[randomNumber]);
-    let id= msg.mentions.users.first();
-      
-      var allChannels =[];
-  
-  
-  msg.guild.channels.cache.forEach(channel => { 
-    if (channel.type === "voice") {
-       allChannels.push(channel.name); 
-       //console.log(channel.name);
-  
-      }
-  });
-  
-     allChannels.forEach(elemento => {
-      msg.guild.member(id).voice.setChannel(msg.guild.channels.cache.find(channel => channel.name === elemento));
-     })
-    }
+ 
   
   
     
