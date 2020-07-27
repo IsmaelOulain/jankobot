@@ -17,7 +17,7 @@ bot.on('message', msg =>{
    if(args[0]==='tour'){
     var member = args[1];
     if(cooldown.has(msg.author.id)){
-      msg.reply("cojone basta spammare ora aspetti 15 min");
+      msg.reply("cojone basta spammare ora aspetti 3 min");
     
     }else{
       cooldown.add(msg.author.id);
@@ -52,7 +52,7 @@ bot.on('message', msg =>{
       }
       setTimeout(()=>{
        cooldown.delete(msg.author.id);
-      },900000)
+      },180000)// cooldown 3 minuti
      
 
     }
