@@ -21,37 +21,37 @@ bot.on('message', msg =>{
     
     }else{
       cooldown.add(msg.author.id);
-      setTimeout(()=>{
-        if(!args[1]){
-          msg.reply("chi?");
-        }else{
-          var textArray = [
-            'bravo cojone mò fatte ngiretto',
-            'facce sapè poi come è andato il tour',
-            'comunque mò devi pagà er giro eh a stronzo',
-            'te sei guadagnato un bel giretto, per informazioni scrivimi su: cha_.ndu',
-            
-        ];
-        var randomNumber = Math.floor(Math.random()*textArray.length);
-        msg.channel.send(member+" "+textArray[randomNumber]);
-        let id= msg.mentions.users.first();
+      if(!args[1]){
+        msg.reply("chi?");
+      }else{
+        var textArray = [
+          'bravo cojone mò fatte ngiretto',
+          'facce sapè poi come è andato il tour',
+          'comunque mò devi pagà er giro eh a stronzo',
+          'te sei guadagnato un bel giretto, per informazioni scrivimi su: cha_.ndu',
           
-          var allChannels =[];
-      
-      
-      msg.guild.channels.cache.forEach(channel => { 
-        if (channel.type === "voice") {
-           allChannels.push(channel.name); 
-           //console.log(channel.name);
-      
-          }
-      });
-      
-         allChannels.forEach(elemento => {
-          msg.guild.member(id).voice.setChannel(msg.guild.channels.cache.find(channel => channel.name === elemento));
-         })
+      ];
+      var randomNumber = Math.floor(Math.random()*textArray.length);
+      msg.channel.send(member+" "+textArray[randomNumber]);
+      let id= msg.mentions.users.first();
+        
+        var allChannels =[];
+    
+    
+    msg.guild.channels.cache.forEach(channel => { 
+      if (channel.type === "voice") {
+         allChannels.push(channel.name); 
+         //console.log(channel.name);
+    
         }
-
+    });
+    
+       allChannels.forEach(elemento => {
+        msg.guild.member(id).voice.setChannel(msg.guild.channels.cache.find(channel => channel.name === elemento));
+       })
+      }
+      setTimeout(()=>{
+       cooldown.delete(msg.author.id);
       },900000)
      
 
