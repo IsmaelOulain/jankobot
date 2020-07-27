@@ -73,7 +73,6 @@ bot.on('message', msg =>{
     msg.channel.send('hello');
     msg.member.voice.setChannel();
     // user(message.mentions.users.first()).setVoiceChannel(VoiceChannel.name('Generale'))*/
- 
   
   
     
