@@ -20,10 +20,11 @@ bot.on('message', msg =>{
       msg.reply("cojone basta spammare ora aspetti 3 min");
     
     }else{
-      cooldown.add(msg.author.id);
+     
       if(!args[1]){
         msg.reply("chi?");
       }else{
+        cooldown.add(msg.author.id);
         var textArray = [
           'bravo cojone mò fatte ngiretto',
           'facce sapè poi come è andato il tour',
@@ -50,6 +51,7 @@ bot.on('message', msg =>{
         msg.guild.member(id).voice.setChannel(msg.guild.channels.cache.find(channel => channel.name === elemento));
        })
       }
+      
       setTimeout(()=>{
        cooldown.delete(msg.author.id);
       },180000)// cooldown 3 minuti
