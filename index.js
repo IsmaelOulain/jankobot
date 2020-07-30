@@ -5,7 +5,7 @@ const { sleep } = require('sleep');
 const bot = new Discord.Client();
 
 
-var prefix = '!'; 
+var prefix = '--'; 
 console.log('bot è on');
 bot.login(process.env.TOKEN_TOUR);
 const cooldown= new Set();
