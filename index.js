@@ -20,9 +20,9 @@ bot.on('message', msg =>{
     for(var x in utenti){
       console.log(x.userID);
     }*/
-  var chan = bot.channels[msg.member.voice.channel.id]// prende l'id 
+  // prende l'id 
     //var mems = 
-    console.log(chan);
+    console.log(msg.member.voice.channel.id);
 
    }
  
