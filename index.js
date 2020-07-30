@@ -13,6 +13,14 @@ const cooldown= new Set();
 bot.on('message', msg =>{
    var args= msg.content.substring(prefix.length).split(" ");
 
+   if(args[0]=='shuffle'){
+    msg.channel.send("uhh chissà chi ha vinto il giretto");
+    var chan= bot.channels[message.member.voice.channel.id];
+    var utenti= chan.members;
+    for(var x in utenti){
+      console.log(x.userID);
+    }
+   }
  
    if(args[0]==='tour'){
     var member = args[1];
@@ -28,7 +36,7 @@ bot.on('message', msg =>{
         var textArray = [
           'bravo cojone mò fatte ngiretto',
           'facce sapè poi come è andato il tour',
-          'comunque mò devi pagà er giro eh a stronzo',
+          'counque mò devi pagà mer giro eh a stronzo',
           'te sei guadagnato un bel giretto, per informazioni scrivimi su: cha_.ndu',
           
       ];
