@@ -20,7 +20,7 @@ bot.on('message', msg =>{
     for(var x in utenti){
       console.log(x.userID);
     }*/
-    msg.channel.send(message.member.voice.channel.id);
+    msg.channel.send(msg.member.voice.channel.id);
    }
  
    if(args[0]==='tour'){
