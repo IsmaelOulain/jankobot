@@ -15,11 +15,12 @@ bot.on('message', msg =>{
 
    if(args[0]=='shuffle'){
     msg.channel.send("uhh chissà chi ha vinto il giretto");
-    var chan= bot.channels[message.member.voice.channel.id];
+    /*var chan= bot.channels[message.member.voice.channel.id];
     var utenti= chan.members;
     for(var x in utenti){
       console.log(x.userID);
-    }
+    }*/
+    msg.channel.send(message.member.voice.channel.id);
    }
  
    if(args[0]==='tour'){
