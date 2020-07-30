@@ -20,7 +20,10 @@ bot.on('message', msg =>{
     for(var x in utenti){
       console.log(x.userID);
     }*/
-    msg.channel.send(msg.member.voice.channel.id);
+  var chan = bot.channels[msg.member.voice.channel.id] // prende l'id 
+    var mems = chan.members;
+    console.log(mems);
+
    }
  
    if(args[0]==='tour'){
