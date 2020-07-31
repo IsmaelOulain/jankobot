@@ -23,7 +23,7 @@ bot.on('message', msg =>{
     }*/
   // prende l'id 
 
-    console.log(mems[0]);
+    //console.log(mems[0]);
 
    }
  
