@@ -15,17 +15,14 @@ bot.on('message', msg =>{
 
    if(args[0]=='shuffle'){
     //msg.channel.send("uhh chissà chi ha vinto il giretto");
-    /*var chan= bot.channels[message.member.voice.channel.id];
-    var utenti= chan.members;
+    var chan= bot.channels[message.member.voice.channel.id];
+    msg.channel.send(chan);
+    /*var utenti= chan.members;
     for(var x in utenti){
       console.log(x.userID);
     }*/
   // prende l'id 
-    var mems = [];
-    var idC= msg.member.voice.channel.id;
-    msg.guild.users.cache.forEach(utente => {
-      mems.push(utente.member.voice.channel.id===idC);
-    })
+
     console.log(mems[0]);
 
    }
