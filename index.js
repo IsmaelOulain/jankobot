@@ -21,7 +21,7 @@ bot.on('message', msg =>{
        if(ut.member.voice.channel.id=== chan)
           coll= ut.member.voice.channel.id;
      });
-    msg.channel.send(chan);
+    msg.channel.send(coll[0]);
     /*var utenti= chan.members;
     for(var x in utenti){
       console.log(x.userID);
