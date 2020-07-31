@@ -17,7 +17,7 @@ bot.on('message', msg =>{
     //msg.channel.send("uhh chissà chi ha vinto il giretto");
     var chan = msg.member.voice.channel.id;
     var coll=[]; 
-    coll = msg.member.voice.members.id;
+    coll = msg.guild.members;
     //console.log(coll[0]);
     msg.channel.send(coll[0]);
 
