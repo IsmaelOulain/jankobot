@@ -5,31 +5,13 @@ const { sleep } = require('sleep');
 const bot = new Discord.Client();
 
 
-var prefix = '--'; 
+var prefix = '!'; 
 console.log('bot è on');
 bot.login(process.env.TOKEN_TOUR);
 const cooldown= new Set();
  
 bot.on('message', msg =>{
    var args= msg.content.substring(prefix.length).split(" ");
-
-   if(args[0]=='shuffle'){
-    //msg.channel.send("uhh chissà chi ha vinto il giretto");
-    var chan = msg.member.voice.channel.id;
-    var coll=[]; 
-    coll = msg.guild.members;
-    //console.log(coll[0]);
-    msg.channel.send(coll[0]);
-
-    /*var utenti= chan.members;
-    for(var x in utenti){
-      console.log(x.userID);
-    }*/
-  // prende l'id 
-
-    //console.log(mems[0]);
-
-   }
  
    if(args[0]==='tour'){
     var member = args[1];
