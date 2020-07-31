@@ -16,12 +16,11 @@ bot.on('message', msg =>{
    if(args[0]=='shuffle'){
     //msg.channel.send("uhh chissà chi ha vinto il giretto");
     var chan = msg.member.voice.channel.id;
-     var coll =[]; 
-     coll = chan.users.voice.forEach(ut => {
-       if(ut.member.voice.channel.id=== chan)
-          coll= ut.member.voice.channel.id;
-     });
-    msg.channel.send(coll[0]);
+    var coll=[]; 
+    coll =msg.member.voice.members;
+    console.log(coll[0]);
+
+
     /*var utenti= chan.members;
     for(var x in utenti){
       console.log(x.userID);
@@ -69,7 +68,6 @@ bot.on('message', msg =>{
         msg.guild.member(id).voice.setChannel(msg.guild.channels.cache.find(channel => channel.name === elemento));
        })
       }
-      
       setTimeout(()=>{
        cooldown.delete(msg.author.id);
       },180000)// cooldown 3 minuti
