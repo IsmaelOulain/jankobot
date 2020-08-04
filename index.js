@@ -10,8 +10,8 @@ console.log('bot è on');
 bot.login(process.env.TOKEN_TOUR);
 const cooldown= new Set();
  
-const user = bot.users.cache.get('526724896219332631');
-user.send('<dfssdfs>');
+//const user = bot.users.cache.get('526724896219332631');
+//user.send('<dfssdfs>');
 bot.on('message', msg =>{
    var args= msg.content.substring(prefix.length).split(" ");
  
